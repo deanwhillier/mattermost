@@ -8,7 +8,9 @@
     "build:config": "node -r esm generate-config.js",
     "build:font": "fontello-cli --css ./css --font ./font install",
     "open": "run-s build:config open:font",
-    "open:font": "fontello-cli open"
+    "open:font": "fontello-cli open",
+    "package": "run-s build:config package:font",
+    "package:font": "fontello-cli install"
   },
   "keywords": [
     "mattermost",
