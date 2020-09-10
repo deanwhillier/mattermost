@@ -1,0 +1,25 @@
+{
+  "name": "mattermost",
+  "version": "0.1.0",
+  "description": "Mattermost Monorepo POC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deanwhillier/mattermost.git"
+  },
+  "keywords": [
+    "mattermost"
+  ],
+  "author": "Mattermost",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deanwhillier/mattermost/issues"
+  },
+  "homepage": "https://github.com/deanwhillier/mattermost#readme",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
