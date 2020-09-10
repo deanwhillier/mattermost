@@ -1,13 +1,14 @@
 {
   "name": "@mattermost/compass-icons",
   "version": "0.1.0",
+  "private": true,
   "description": "",
-  "main": "generate-config.js",
+  "main": "build/css/compass-icons.css",
   "scripts": {
-    "clean": "rm -rf config.json dist",
+    "clean": "rm -rf config.json build",
     "build": "run-s build:config build:font",
     "build:config": "node -r esm generate-config.js",
-    "build:font": "fontello-cli --css ./dist/css --font ./dist/font install",
+    "build:font": "fontello-cli --css ./build/css --font ./build/font install",
     "open": "run-s build:config open:font",
     "open:font": "fontello-cli open",
     "package": "run-s build:config package:font",

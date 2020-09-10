@@ -1,9 +1,11 @@
 {
   "name": "mattermost",
   "version": "0.1.0",
+  "private": true,
   "description": "Mattermost Monorepo POC",
   "main": "index.js",
   "scripts": {
+    "start": "lerna run start",
     "postinstall": "lerna bootstrap --hoist",
     "clean": "lerna run clean",
     "build": "lerna run build",
