@@ -1,8 +1,8 @@
-import fs from "fs";
-import path from "path";
-import crypto from "crypto";
-import svgImageFlatten from "fontello-batch-cli/svgflatten";
-import SVGPath from "svgpath";
+import fs from 'fs';
+import path from 'path';
+import crypto from 'crypto';
+import svgImageFlatten from 'fontello-batch-cli/svgflatten';
+import SVGPath from 'svgpath';
 
 export const FILE_COMPONENTS_REGEX = /^(_)?(.+)[|_](.+)\.svg$/;
 
@@ -19,27 +19,29 @@ const parseSVGIconFileName = (fileName, filePath) => {
         enabled: !!fileComponents[1] ? false : true,
         name: fileComponents[2],
         code: fileComponents[3],
-        filePath: path.join(filePath, fileName)
-    }
-}
+        filePath: path.join(filePath, fileName),
+    };
+};
 
-export const getFileData = (filePath = "./svgs", parse = parseSVGIconFileName) => {
+export const getFileData = (filePath = './svgs', parse = parseSVGIconFileName) => {
     const files = fs.readdirSync(filePath, 'utf-8');
     if (!files) {
         throw new Error(`No files found in ${filePath}`);
     }
-    return files.map(fileName => {
-        return parse(fileName, filePath);
-    }).filter(file => !!file);
-}
+    return files
+        .map((fileName) => {
+            return parse(fileName, filePath);
+        })
+        .filter((file) => !!file);
+};
 
 const loadFileContents = (filePath) => fs.readFileSync(filePath, 'utf-8');
 
-const generateUIDFromString = string => crypto.createHash('md5').update(string).digest("hex");
+const generateUIDFromString = (string) => crypto.createHash('md5').update(string).digest('hex');
 
-const convertHexStringToDec = string => parseInt(string, 16);
+const convertHexStringToDec = (string) => parseInt(string, 16);
 
-export const generateGlyphs = fileData => {
+export const generateGlyphs = (fileData) => {
     return fileData.map((file) => {
         if (!file) {
             return;
@@ -56,19 +58,18 @@ export const generateGlyphs = fileData => {
             uid: generateUIDFromString(file.fileName),
             css: file.name,
             code: convertHexStringToDec(file.code),
-            src: "custom_icons",
+            src: 'custom_icons',
             selected: file.enabled,
             svg: {
                 path,
-                width: 1000
+                width: 1000,
             },
-            search: [file.name]
-        }
-    
+            search: [file.name],
+        };
     });
-}
+};
 
-export const writeFileToDisk = (fileName = "config.json", fileData = {}) => {
+export const writeFileToDisk = (fileName = 'config.json', fileData = {}) => {
     try {
         fs.unlinkSync(fileName);
     } catch (error) {
@@ -76,6 +77,6 @@ export const writeFileToDisk = (fileName = "config.json", fileData = {}) => {
     }
     fs.writeFileSync(fileName, JSON.stringify(fileData, null, 4), {
         encoding: 'utf-8',
-        flag: 'w'
+        flag: 'w',
     });
-}
+};

@@ -1,4 +1,4 @@
-import { getFileData, generateGlyphs, writeFileToDisk } from "./utils";
+import { getFileData, generateGlyphs, writeFileToDisk } from './utils';
 
 const files = getFileData();
 
@@ -11,7 +11,7 @@ const configData = {
     hinting: false,
     units_per_em: 1000,
     ascent: 850,
-    glyphs
-}
+    glyphs,
+};
 
 writeFileToDisk('config.json', configData);
