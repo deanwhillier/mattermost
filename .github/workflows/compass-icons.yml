@@ -8,6 +8,11 @@ on:
             - master
         paths:
             - 'packages/compass-icons/*'
+    pull_request:
+        branch:
+            - master
+        paths:
+            - 'packages/compass-icons/*'
 
 jobs:
     build:
