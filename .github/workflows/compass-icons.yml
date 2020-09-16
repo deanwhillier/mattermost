@@ -2,8 +2,6 @@ name: Compass Icons CI
 
 on:
     push:
-        branches:
-            - master
         paths:
             - 'packages/compass-icons/*'
 
