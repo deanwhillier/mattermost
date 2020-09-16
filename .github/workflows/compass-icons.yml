@@ -1,6 +1,7 @@
 name: Compass Icons CI
 
 on:
+    workflow-dispatch:
     push:
         paths:
             - 'packages/compass-icons/*'
