@@ -12,6 +12,7 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v2
             - name: npm install and package
+              working-directory: ./packages/compass-icons
               run: |
                   npm install
                   npm run build
