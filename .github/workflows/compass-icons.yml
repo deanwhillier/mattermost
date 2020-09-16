@@ -1,0 +1,22 @@
+name: Compass Icons CI
+
+on:
+    push:
+        paths:
+            - 'packages/compass-icons/*'
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+                uses: actions/checkout@v2
+            - name: npm install and package
+                run: |
+                    npm install
+                    npm run build
+            - name: Archive artifacts
+                uses: actions/upload-artifacts@v2
+                with:
+                    name: Build folder
+                    path: packages/compass-icons/build
