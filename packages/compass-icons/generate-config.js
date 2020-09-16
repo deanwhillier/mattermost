@@ -15,5 +15,3 @@ const configData = {
 };
 
 writeFileToDisk('config.json', configData);
-
-// trigger workflow, again, again
