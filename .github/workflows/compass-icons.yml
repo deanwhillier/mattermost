@@ -16,6 +16,9 @@ jobs:
               run: |
                   npm install
                   npm run build
+            - name: Copy config file to build folder
+              working-directory: ./packages/compass-icons
+              run: cp config.json ./build
             - name: Archive artifacts
               uses: actions/upload-artifact@v2
               with:
