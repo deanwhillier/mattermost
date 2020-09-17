@@ -14,7 +14,7 @@ function App() {
                 <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
                     Learn React
                 </a>
-                <i className="icon icon-alien-outline"></i>
+                <i className="icon icon-arrow-expand-all"></i>
             </header>
         </div>
     );
