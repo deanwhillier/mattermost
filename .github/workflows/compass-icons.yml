@@ -6,7 +6,7 @@ on:
         branches:
             - master
         paths:
-            - 'packages/compass-icons/*'
+            - 'packages/compass-icons/**'
 
 jobs:
     build:
