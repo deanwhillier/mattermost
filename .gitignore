@@ -3,3 +3,4 @@ lerna-debug.log
 build
 dist
 config.json
+fontello*

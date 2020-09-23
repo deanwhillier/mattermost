@@ -18,12 +18,12 @@ jobs:
               working-directory: ./packages/compass-icons
               run: |
                   npm install
-                  npm run build
-            - name: Copy config file to build folder
+                  npm run package
+            - name: Rename downloaded fontello package
               working-directory: ./packages/compass-icons
-              run: cp config.json ./build
+              run: mv fontello* fontello
             - name: Archive artifacts
               uses: actions/upload-artifact@v2
               with:
                   name: CompassIconFont
-                  path: packages/compass-icons/build
+                  path: packages/compass-icons/fontello
