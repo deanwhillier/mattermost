@@ -1,4 +1,6 @@
-Adding Icons
+#Adding Icons
+
+**NOTE: These docs need to be updated**
 
 Simple steps to adding new icons to the Compass Icons font
 
