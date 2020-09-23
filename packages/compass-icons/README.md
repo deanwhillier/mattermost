@@ -1,4 +1,4 @@
-#Adding Icons
+# Adding Icons
 
 **NOTE: These docs need to be updated**
 
