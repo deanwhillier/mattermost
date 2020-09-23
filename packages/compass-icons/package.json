@@ -5,7 +5,7 @@
     "description": "",
     "main": "build/css/compass-icons.css",
     "scripts": {
-        "start": "npm run build:config",
+        "start": "npm run build",
         "clean": "rm -rf config.json build",
         "build": "run-s build:config build:font",
         "build:config": "node -r esm generate-config.js",
