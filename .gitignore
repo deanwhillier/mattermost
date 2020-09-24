@@ -5,3 +5,5 @@ dist
 .nova
 config.json
 fontello*
+.DS_Store
+.git
