@@ -1,6 +1,6 @@
 import { getFileData, generateGlyphs, writeFileToDisk } from './utils';
 
-const files = getFileData();
+const files = getFileData('./svgs');
 
 const glyphs = generateGlyphs(files);
 
