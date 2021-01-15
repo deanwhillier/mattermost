@@ -21,8 +21,9 @@ jobs:
                   npm run package
             - name: Rename downloaded fontello package
               working-directory: ./packages/compass-icons
-              run: mv fontello* fontello
-              run: cp iconGlyphs.ts ./fontello
+              run: |
+                  mv fontello* fontello
+                  cp iconGlyphs.ts ./fontello
             - name: Archive artifacts
               uses: actions/upload-artifact@v2
               with:
