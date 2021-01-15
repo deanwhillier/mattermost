@@ -7,3 +7,4 @@ config.json
 fontello*
 .DS_Store
 .git
+iconGlyphs.ts

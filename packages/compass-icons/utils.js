@@ -69,14 +69,21 @@ export const generateGlyphs = (fileData) => {
     });
 };
 
-export const writeFileToDisk = (fileName = 'config.json', fileData = {}) => {
+export const writeJSONToDisk = (fileName = 'config.json', fileData = {}) => {
+    writeToDisk(fileName, JSON.stringify(fileData, null, 4));
+};
+
+export const writeToDisk = (fileName, fileData) => {
     try {
         fs.unlinkSync(fileName);
     } catch (error) {
         // ignore
     }
-    fs.writeFileSync(fileName, JSON.stringify(fileData, null, 4), {
-        encoding: 'utf-8',
-        flag: 'w',
-    });
-};
+    fs.writeFileSync(fileName,
+        fileData,
+        {
+            encoding: 'utf-8',
+            flag: 'w',
+        }
+    );
+}
