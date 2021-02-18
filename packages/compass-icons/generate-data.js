@@ -20,7 +20,7 @@ writeJSONToDisk('config.json', configData);
 
 // generate icon glyph data
 
-const iconGlyphs = configData.glyphs.map(({css}) => `\t'${css.toUpperCase().split('-').join('_')}': '${css}',`);
+const iconGlyphs = configData.glyphs.map(({css}) => `    ${css.toUpperCase().split('-').join('_')}: '${css}',`);
 
 const iconGlyphsData = `
 export const IconGlyphs = {
